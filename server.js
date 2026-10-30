@@ -4,7 +4,10 @@ import userRoute from "./routes/userRoute.js";
 import { dbConnect } from "./database/db.js";
 import projectRoute from "./routes/projectRoute.js";
 import cors from "cors"
-
+const allowedOrigins = [
+  'https://chetanpaudel.com.np',
+  'http://localhost:3000'
+];
 projectRoute
 dotenv.config();
 
@@ -12,7 +15,7 @@ const app=express();
 app.use(express.json());
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: allowedOrigins,
     credentials: true,
   })
 );
