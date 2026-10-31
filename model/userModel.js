@@ -3,19 +3,19 @@ import mongoose from "mongoose";
 const userSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: true,   // must provide name
+    required: true,   
   },
   email: {
     type: String,
     required: true,
-    unique: true,     // no duplicate emails
+    unique: true,   
   },
   password: {
     type: String,
     required: true,
   }
 }, {
-  timestamps: true   // createdAt & updatedAt
+  timestamps: true  
 });
 
 // create model
