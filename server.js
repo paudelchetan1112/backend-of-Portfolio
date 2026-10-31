@@ -1,6 +1,7 @@
 import express from "express";
 import dotenv from "dotenv"
 import userRoute from "./routes/userRoute.js";
+import contactRoute from "./routes/contactRoute.js";
 import { dbConnect } from "./database/db.js";
 import projectRoute from "./routes/projectRoute.js";
 import cors from "cors"
@@ -21,6 +22,7 @@ app.use(
 );
 app.use("/api/",userRoute);
 app.use("/api/",projectRoute)
+app.use("/api/contact/",contactRoute)
 console.log(process.env.MONGODBURI);
 const port=process.env.PORT||4000;
 dbConnect();
