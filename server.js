@@ -4,6 +4,7 @@ import userRoute from "./routes/userRoute.js";
 import contactRoute from "./routes/contactRoute.js";
 import { dbConnect } from "./database/db.js";
 import projectRoute from "./routes/projectRoute.js";
+import healthzRoute from "./routes/healthzRoute.js";
 import cors from "cors"
 const allowedOrigins = [
   'https://chetanpaudel.com.np',
@@ -23,6 +24,7 @@ app.use(
 app.use("/api/",userRoute);
 app.use("/api/",projectRoute)
 app.use("/api/contact/",contactRoute)
+app.use("/api/healthz", healthzRoute)
 console.log(process.env.MONGODBURI);
 const port=process.env.PORT||4000;
 dbConnect();
